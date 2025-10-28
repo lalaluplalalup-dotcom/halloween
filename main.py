@@ -1,29 +1,29 @@
-basic.forever(function () {
-    for (let Index = 0; Index <= 2; Index++) {
+def on_forever():
+    for Index in range(3):
         led.plot(Index, 2)
         led.plot(Index + 2, 2)
         basic.pause(500)
-        basic.clearScreen()
-    }
-    basic.showLeds(`
+        led.unplot(Index, 2)
+        led.unplot(Index + 2, 2)
+    basic.show_leds("""
         . . . . .
         . . . . .
         . . # . #
         . . . . .
         . . . . .
-        `)
-    basic.showLeds(`
+        """)
+    basic.show_leds("""
         . . . . .
         . . . . .
         . # . # .
         . . . . .
         . . . . .
-        `)
-    basic.showLeds(`
+        """)
+    basic.show_leds("""
         . . . . .
         . . . . .
         # . # . .
         . . . . .
         . . . . .
-        `)
-})
+        """)
+basic.forever(on_forever)
